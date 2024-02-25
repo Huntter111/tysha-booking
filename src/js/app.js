@@ -104,27 +104,27 @@ import * as flsForms from './files/forms/forms.js';
 
 /* Робота з полями форми */
 /* Документація: https://template.fls.guru/template-docs/rabota-s-formami.html */
-/*
+
 flsForms.formFieldsInit({
 	viewPass: false,
-	autoHeight: false
+	autoHeight: false,
 });
-*/
+
 /* Надсилання форми */
 /* Документація: https://template.fls.guru/template-docs/rabota-s-formami.html */
-// flsForms.formSubmit();
+flsForms.formSubmit();
 
 /* Модуль форми "кількість" */
-// flsForms.formQuantity();
+flsForms.formQuantity();
 
 /* Модуль зіркового рейтингу */
 // flsForms.formRating();
 
 /* Модуль роботи з select. */
-// import './libs/select.js'
+import './libs/select.js';
 
 /* Модуль роботи з календарем */
-// import './files/forms/datepicker.js'
+import './files/forms/datepicker.js';
 
 /* (У роботі) Модуль роботи з масками.*/
 /*
@@ -133,7 +133,7 @@ flsForms.formFieldsInit({
 Документація плагіна: https://github.com/RobinHerbots/inputmask
 Сніппет(HTML):
 */
-// import "./files/forms/inputmask.js";
+import './files/forms/inputmask.js';
 
 /* Модуль роботи з повзунком */
 /*

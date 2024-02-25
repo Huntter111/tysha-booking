@@ -1,0 +1,222 @@
+<!doctype html>
+<html lang="en">
+	@@include('html/_head.htm',{ "title":"Бронювання в Tysha" })
+	<body>
+		<div class="wrapper">
+			<main class="page">
+				<section class="booking">
+					<div class="booking__container">
+						<div class="booking__wrapper">
+							<div class="booking__inner">
+								<div class="what-we-offer">
+									<h2 class="what-we-offer__title">Що ми пропонуємо</h2>
+									<div class="what-we-offer__items">
+										<div class="what-we-offer__item item-what-offer">
+											<h3 class="item-what-offer__sub-title">В домі</h3>
+											<ul class="item-what-offer__list">
+												<li class="item-what-offer__item">дві спальні</li>
+												<li class="item-what-offer__item">вітальня з каміном</li>
+												<li class="item-what-offer__item">вид на ліс та гори</li>
+												<li class="item-what-offer__item">WI-FI</li>
+												<li class="item-what-offer__item">кондиціонер</li>
+											</ul>
+										</div>
+										<div class="what-we-offer__item item-what-offer">
+											<h3 class="item-what-offer__sub-title">Подвір’я</h3>
+											<ul class="item-what-offer__list">
+												<li class="item-what-offer__item">кострище</li>
+												<li class="item-what-offer__item">зона для медитації</li>
+												<li class="item-what-offer__item">басейн з підігрівом</li>
+												<li class="item-what-offer__item">чан</li>
+												<li class="item-what-offer__item">зона для барбекю</li>
+											</ul>
+										</div>
+										<div class="what-we-offer__item item-what-offer">
+											<h3 class="item-what-offer__sub-title">Кухня</h3>
+											<ul class="item-what-offer__list">
+												<li class="item-what-offer__item">кава, чай</li>
+												<li class="item-what-offer__item">кавоварка</li>
+												<li class="item-what-offer__item">мікрохвильова піч</li>
+												<li class="item-what-offer__item">електрочайник</li>
+												<li class="item-what-offer__item">кухонний посуд</li>
+											</ul>
+										</div>
+										<div class="what-we-offer__item item-what-offer">
+											<h3 class="item-what-offer__sub-title">Ванна кімната</h3>
+											<ul class="item-what-offer__list">
+												<li class="item-what-offer__item">косметичні засоби</li>
+												<li class="item-what-offer__item">фен</li>
+												<li class="item-what-offer__item">рушники</li>
+												<li class="item-what-offer__item">халат</li>
+												<li class="item-what-offer__item">капці</li>
+											</ul>
+										</div>
+										<div class="what-we-offer__item item-what-offer">
+											<h3 class="item-what-offer__sub-title">Спальня № 1</h3>
+											<ul class="item-what-offer__list">
+												<li class="item-what-offer__item">постільна білизна</li>
+												<li class="item-what-offer__item">велике ліжко</li>
+												<li class="item-what-offer__item">вид на ліс та гори</li>
+											</ul>
+										</div>
+										<div class="what-we-offer__item item-what-offer">
+											<h3 class="item-what-offer__sub-title">Спальня № 2</h3>
+											<ul class="item-what-offer__list">
+												<li class="item-what-offer__item">постільна білизна</li>
+												<li class="item-what-offer__item">велике ліжко</li>
+												<li class="item-what-offer__item">вид на ліс та гори</li>
+												<li class="item-what-offer__item">шафа</li>
+											</ul>
+										</div>
+										<div class="what-we-offer__item item-what-offer">
+											<h3 class="item-what-offer__sub-title">Правила безпеки</h3>
+											<ul class="item-what-offer__list">
+												<li class="item-what-offer__item">
+													Правила безпеки камера спостереження на території вогнегасник датчик диму
+												</li>
+												<li class="item-what-offer__item">вогнегасник</li>
+												<li class="item-what-offer__item">датчик диму</li>
+											</ul>
+										</div>
+										<div class="what-we-offer__item item-what-offer">
+											<h3 class="item-what-offer__sub-title">парковка</h3>
+											<ul class="item-what-offer__list">
+												<li class="item-what-offer__item">безкоштовна приватна</li>
+											</ul>
+										</div>
+									</div>
+								</div>
+								<div class="booking__form">
+									<div class="booking__time time-booking">
+										<div class="time-booking__item">
+											<div class="time-booking__icon">
+												<img src="@img/icons/settlement.svg" alt="іконка часу" />
+											</div>
+											<div class="time-booking__text">Заселення - з 11:00</div>
+										</div>
+										<div class="time-booking__item">
+											<div class="time-booking__icon">
+												<img src="@img/icons/eviction.svg" alt="іконка часу" />
+											</div>
+											<div class="time-booking__text">Виселення - до 12:00</div>
+										</div>
+									</div>
+									<form action="files/send_to_telegram.php" method="POST" class="form">
+										<div class="form__title">Ваші дані</div>
+										<div class="form__row form__row--name">
+											<div class="form__column">
+												<label class="form__label" for="">Ім’я*</label>
+												<input
+													data-validate
+													data-required="name"
+													autocomplete="off"
+													type="text"
+													name="name"
+													placeholder=""
+													class="input"
+													required
+												/>
+											</div>
+											<div class="form__column">
+												<label class="form__label" for="">Прізвище</label>
+												<input
+													autocomplete="off"
+													type="text"
+													name="last-name"
+													placeholder=""
+													class="input"
+													data-validate
+												/>
+											</div>
+										</div>
+										<div class="form__row form__row--tel">
+											<div class="form__column">
+												<label class="form__label" for="">Номер телефону*</label>
+												<!-- placeholder="E-mail" -->
+												<input
+													type="text"
+													name="phone"
+													class="input phone-input-mask"
+													placeholder="+38(0__) ___-__-__"
+													required
+													data-validate
+													data-required="phone"
+												/>
+											</div>
+										</div>
+
+										<div class="form__row form__row--date">
+											<div class="form__column">
+												<lablel class="form__label">Оберіть дати*</lablel>
+												<input
+													id="startDatePicker"
+													data-datepicker
+													type="text"
+													name="start-date"
+													placeholder="Початкова дата"
+													class="input"
+													required
+												/>
+											</div>
+											<div class="form__column">
+												<!-- <lablel class="form__label"></lablel> -->
+												<input
+													id="endDatePicker"
+													data-datepicker
+													type="text"
+													name="end-date"
+													class="input"
+													placeholder="Кінцева дата"
+													required
+												/>
+											</div>
+										</div>
+										<div class="form__row form__row--quantity">
+											<div class="form__column form__column--quantity">
+												<label class="form__label" for="">Кількість гостей*</label>
+												<div data-quantity class="quantity">
+													<div class="quantity__input">
+														<input
+															data-quantity-value
+															autocomplete="off"
+															type="text"
+															name="quantity"
+															value="2"
+															required
+															class="input input--quantity"
+														/>
+													</div>
+
+													<button
+														data-quantity-minus
+														type="button"
+														class="quantity__button quantity__button--minus"
+													></button>
+													<button
+														data-quantity-plus
+														type="button"
+														class="quantity__button quantity__button--plus"
+													></button>
+												</div>
+											</div>
+										</div>
+										<div class="form__row form__row--message">
+											<div class="form__column">
+												<label class="form__label" for="">Коментар</label>
+												<textarea class="input" name="message" id="" cols="30" rows="10"></textarea>
+											</div>
+										</div>
+										<div class="form__button">
+											<button type="submit" class="button">забронювати</button>
+										</div>
+									</form>
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
+			</main>
+		</div>
+		@@include('html/_js.htm',{})
+	</body>
+</html>

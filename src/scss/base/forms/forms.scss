@@ -1,15 +1,79 @@
 //<FORM>
 // Сніппет (HTML):
 .form {
+	display: flex;
+	flex-direction: column;
+	@include adaptiveValue('row-gap', 24, 16);
+	// @include adaptiveValue('padding-right', 150, 15);
+	// @include adaptiveValue('padding-left', 150, 15);
+	@media (min-width: $mobile) {
+		max-width: toRem(500);
+	}
+	&__title {
+		@include adaptiveValue('font-size', 24, 18);
+		@media (max-width: $mobileSmall) {
+			font-weight: 500;
+		}
+	}
 	&__row {
+		display: grid;
+		column-gap: toRem(30);
+		@media (max-width: $mobileSmall) {
+			column-gap: toRem(15);
+		}
+		@include adaptiveValue('row-gap', 24, 16);
+		&--name {
+			@media (min-width: $mobile) {
+				grid-template-columns: 1fr 2fr;
+			}
+		}
+		&--tel {
+		}
+		&--date {
+			grid-template-columns: repeat(2, 1fr);
+			align-items: end;
+			@media (max-width: em(375)) {
+				grid-template-columns: 1fr;
+			}
+		}
+		&--quantity {
+		}
 	}
 	&__column {
+		display: flex;
+		flex-direction: column;
+		@include adaptiveValue('row-gap', 12, 8);
+		&--quantity {
+			display: grid;
+			// grid-template-columns: repeat(2, 1fr);
+			grid-template-columns: 1fr;
+			@media (max-width: $mobileSmall) {
+				grid-template-columns: 1fr;
+			}
+
+			column-gap: toRem(30);
+			@media (max-width: $mobileSmall) {
+				column-gap: toRem(15);
+			}
+		}
 	}
 	&__line {
 	}
+	&__label {
+		@include adaptiveValue('font-size', 18, 16);
+		._form-error & {
+			color: #bf2020;
+		}
+	}
 	&__input {
+		@include adaptiveValue('font-size', 18, 16);
 	}
 	&__button {
+		display: flex;
+		justify-content: center;
+		@media (min-width: $mobile) {
+			justify-content: end;
+		}
 	}
 	&__error {
 	}
@@ -22,7 +86,7 @@
 
 // <INPUTS>
 // Сніппет (HTML): inp
-// @import "input";
+@import 'input';
 
 // <CHECK>
 // Сніппет (HTML): chk
@@ -34,7 +98,7 @@
 
 // <SELECT>
 // Сніппет (HTML): sel
-// @import "select";
+@import 'select';
 
 // <RATING>
 // Сніппет (HTML): rating
@@ -42,7 +106,7 @@
 
 // <QUANTITY>
 // Сніппет (HTML): qa
-// @import "quantity";
+@import 'quantity';
 
 // <RANGE>
 // Сніппет (HTML):
@@ -50,4 +114,4 @@
 
 // <CALENDAR>
 // Сніппет (HTML):
-// @import "datepicker";
+@import 'datepicker';

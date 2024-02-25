@@ -1,43 +1,61 @@
 //<QUANTITY>
 // Сніппет (HTML): qa
 .quantity {
-	width: 88px;
-	height: 40px;
+	width: toRem(51);
+	height: toRem(23);
+	border: toRem(0.1) solid var(--2-deep-green);
+
 	display: flex;
-	border: 1px solid rgba(166, 166, 166, 0.45);
+	position: relative;
+	// border: 1px solid rgba(166, 166, 166, 0.45);
 	// .quantity__button
+	&__buttons {
+		width: toRem(20);
+		height: toRem(30);
+	}
 	&__button {
-		flex: 0 0 30px;
-		position: relative;
+		position: absolute;
+		flex: 0 0 toRem(12);
+		width: toRem(12);
+		height: toRem(5);
+		// top: 50%;
+		// right: 0;
 		cursor: pointer;
 		&::before,
 		&::after {
-			content: "";
+			content: '';
 			position: absolute;
-			top: 50%;
-			left: 50%;
+
 			transition: all 0.3s ease 0s;
 			margin: 0px 0px 0px -4.5px;
-			background-color: #a6a6a6;
-			width: 9px;
-			height: 1px;
+			// background-color: #a6a6a6;
+			// width: 9px;
+			// height: 1px;
+		}
+		&::before {
+		}
+		&::after {
 		}
 		@media (any-hover: hover) {
 			&:hover {
 				&::before,
 				&::after {
-					background-color: rgba(0, 0, 0, 0.5);
+					// background-color: rgba(0, 0, 0, 0.5);
 				}
 			}
 		}
 		// .quantity__button_plus
 		&--plus {
-			&::before {
-				transform: rotate(-90deg);
-			}
+			top: 20%;
+			right: 0;
+			background: url('@img/icons/quantity-arrow-up.svg') 0 0 / 12px 5px no-repeat;
+			//
 		}
 		// .quantity__button_minus
 		&--minus {
+			top: 60%;
+			right: 0;
+			background: url('@img/icons/quantity-arrow-down.svg') 0 0 / 12px 5px no-repeat;
 		}
 	}
 	// .quantity__input
@@ -45,9 +63,9 @@
 		flex: 1 1 auto;
 		input {
 			height: 100%;
-			color: #a6a6a6;
-			font-size: 12px;
-			width: 100%;
+			// color: #a6a6a6;
+			font-size: toRem(16);
+			max-width: toRem(34);
 			text-align: center;
 		}
 	}
