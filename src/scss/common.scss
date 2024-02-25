@@ -1,1 +1,493 @@
 // Заголовки, загальні БЕМ блоки та інше...
+// Заголовки, загальні БЕМ блоки та інше...
+.title {
+	font-weight: 500;
+	@include adaptiveValue('font-size', 48, 18);
+	line-height: 1.2;
+	text-transform: uppercase;
+}
+.text {
+	@include adaptiveValue('font-size', 18, 14);
+	line-height: 1.5;
+}
+.wrapper-contacts-social {
+	display: flex;
+	flex-direction: column;
+	@include adaptiveValue('row-gap', 48, 24);
+}
+.contacs {
+	display: flex;
+	flex-direction: column;
+	row-gap: toRem(16);
+	&__item {
+		display: flex;
+		column-gap: toRem(8);
+		line-height: 1.3;
+	}
+
+	&__icon {
+		width: toRem(24);
+		height: toRem(24);
+		fill: var(--2-deep-green);
+		& > svg {
+			width: toRem(24);
+			height: toRem(24);
+		}
+	}
+
+	&__link {
+		@include adaptiveValue('font-size', 18, 14);
+		transition: all 0.3s;
+		@media (any-hover: hover) {
+			&:hover {
+				color: var(--2-peach);
+			}
+		}
+	}
+	&__phone {
+	}
+	&__location {
+	}
+}
+.social {
+	display: flex;
+	align-items: center;
+	gap: toRem(16);
+
+	&__link {
+		& > svg {
+			transition: all 0.3s;
+			width: toRem(24);
+			height: toRem(24);
+			fill: #f7efe8;
+			@include adaptiveValue('font-size', 18, 14);
+			@media (max-width: $mobileSmall) {
+				width: toRem(20);
+				height: toRem(20);
+			}
+			@media (any-hover: hover) {
+				&:hover {
+					fill: #d4a288;
+				}
+			}
+		}
+		&--green {
+			svg {
+				fill: #203d36 !important;
+			}
+		}
+		&--facebook {
+		}
+		&--instagram {
+		}
+		&--telegram {
+		}
+	}
+	&--mobile {
+		@media (min-width: $mobile) {
+			display: none;
+		}
+	}
+	&--full-page {
+		@media (max-width: $mobile) {
+			display: none;
+		}
+	}
+}
+.social-footer {
+	&__link {
+		width: toRem(24);
+		height: toRem(24);
+
+		& > svg {
+			fill: #203d36;
+		}
+	}
+}
+
+.box {
+	position: relative;
+	max-width: toRem(1440);
+	padding-right: toRem(15);
+	padding-left: toRem(15);
+	margin: 0 auto;
+	@include adaptiveValue('margin-bottom', 64, 32);
+}
+// ! Button play video
+.video-play-button {
+	width: toRem(53);
+	height: toRem(56);
+	background: url('@img/icons/play-video.svg') no-repeat;
+	background-size: cover;
+	border: none;
+	cursor: pointer;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	z-index: 2; /* Щоб кнопка була поверх відео */
+	@media (max-width: $mobileSmall) {
+		width: toRem(27);
+		height: toRem(28);
+		background: url('@img/icons/play-video--small.svg') no-repeat;
+	}
+	&--middle {
+		width: toRem(40);
+		height: toRem(42);
+		background: url('@img/icons/play-video--middle.svg') no-repeat;
+		@media (max-width: $mobileSmall) {
+			width: toRem(27);
+			height: toRem(28);
+			background: url('@img/icons/play-video--small.svg') no-repeat;
+		}
+	}
+}
+
+// ! Style slider for
+.swiper-block-style {
+	&__slider {
+		max-height: toRem(650);
+	}
+
+	&__box {
+		position: relative;
+		max-width: toRem(1440);
+		padding-right: toRem(15);
+		padding-left: toRem(15);
+		margin: 0 auto;
+		&:not(:last-child) {
+			@include adaptiveValue('margin-bottom', 64, 32);
+		}
+	}
+
+	&__slide {
+	}
+}
+.swiper-block-style {
+	&__pagination {
+		bottom: toRem(-35) !important;
+		@media (max-width: $mobileSmall) {
+			bottom: toRem(-15) !important;
+		}
+		& > .swiper-pagination-bullet {
+			@include adaptiveValue('width', 10, 5, 0, 768, 320);
+			@include adaptiveValue('height', 10, 5, 0, 768, 320);
+			background: transparent;
+			border: toRem(0.75) solid #203d36;
+			opacity: 1;
+			transition: all 0.3s;
+			@media (any-hover: hover) {
+				&:hover {
+					background-color: var(--2-peach);
+					border: toRem(0.75) solid transparent;
+				}
+			}
+		}
+		& > .swiper-pagination-bullet-active {
+			background-color: #203d36;
+		}
+	}
+}
+.swiper-block-style {
+	&__buttons {
+		& > button {
+			z-index: 2 !important;
+			width: toRem(48) !important;
+			height: toRem(48) !important;
+			@media (max-width: $mobileSmall) {
+				width: toRem(24) !important;
+				height: toRem(24) !important;
+			}
+		}
+		& > .swiper-block-style-button-prev {
+			left: percent(185, $maxWidth);
+			@media (max-width: $mobile) {
+				left: percent(10, $maxWidth);
+			}
+			@media (max-width: $mobileSmall) {
+				left: toRem(5);
+			}
+			&::after {
+				width: toRem(48) !important;
+				height: toRem(48) !important;
+				@media (max-width: $mobileSmall) {
+					width: toRem(24) !important;
+					height: toRem(24) !important;
+					background: #203d36 url('@img/icons/arrow-slider--small.svg') 50% / 13px 12px no-repeat;
+				}
+				color: transparent;
+				border-radius: 50%;
+				@media (min-width: $mobileSmall) {
+					background: #203d36 url('@img/icons/arrow-slider.svg') 50% / 26px 26px no-repeat;
+				}
+			}
+			@media (any-hover: hover) {
+				&:hover {
+					&::after {
+						@media (min-width: $mobileSmall) {
+							background: #203d36 url('@img/icons/arrow-swiper-light.svg') 50% / 26px 26px no-repeat;
+						}
+					}
+				}
+			}
+			&:active {
+				transform: scale(0.98);
+			}
+		}
+		& > .swiper-block-style-button-next {
+			right: percent(185, $maxWidth);
+			@media (max-width: $mobile) {
+				right: percent(10, $maxWidth);
+			}
+			@media (max-width: $mobileSmall) {
+				right: toRem(5);
+			}
+			&::after {
+				width: toRem(48) !important;
+				height: toRem(48) !important;
+				// display: none;
+				color: transparent;
+				// background-color: #000;
+				border-radius: 50%;
+				@media (min-width: $mobileSmall) {
+					background: #203d36 url('@img/icons/arrow-slider.svg') 50% no-repeat;
+				}
+				transform: rotate(180deg);
+				@media (max-width: $mobileSmall) {
+					width: toRem(24) !important;
+					height: toRem(24) !important;
+					background: #203d36 url('@img/icons/arrow-slider--small.svg') 50% / 13px 12px no-repeat;
+				}
+			}
+			@media (any-hover: hover) {
+				&:hover {
+					&::after {
+						@media (min-width: $mobileSmall) {
+							background: #203d36 url('@img/icons/arrow-swiper-light.svg') 50% / 26px 26px no-repeat;
+						}
+					}
+				}
+			}
+			&:active {
+				transform: scale(0.98);
+			}
+		}
+	}
+}
+// ! input
+.iti__selected-flag {
+	padding: 0 10px 6px 0px !important;
+	// column-gap: toRem(5);
+	background-color: transparent !important;
+}
+.iti__tel-input {
+	padding-left: 93px !important;
+}
+.iti__dropdown-content {
+	color: #203d36;
+}
+.iti__selected-dial-code {
+	order: 1;
+	margin-left: toRem(8) !important;
+}
+.iti__arrow {
+	width: toRem(11) !important;
+	height: 100% !important;
+	position: relative;
+	border: none !important;
+	&::before {
+		transition: all 0.3s;
+		position: absolute;
+		content: '';
+		top: calc(50% - 1px);
+		left: calc(50% - 3px);
+		width: toRem(11);
+		height: toRem(6);
+		background: url('@img/icons/arrow-form.svg') 0 0 no-repeat;
+		// transform: rotate(180deg);
+	}
+	&__arrow--up & {
+		// &::before & {
+		// 	transform: rotate(180deg);
+		// }
+	}
+}
+.iti__arrow--up::before {
+	transform: rotate(180deg);
+}
+
+// ! Arrow go UP
+.arrow-up {
+	opacity: 0;
+	transition: all 0.3s;
+	z-index: 100;
+	transform: translateY(toRem(80));
+	@media (max-width: $tablet) {
+		transform: translateY(toRem(65));
+	}
+	@media (max-width: $mobileSmall) {
+		transform: translateY(toRem(55));
+	}
+	&__wrapper {
+		@media (max-width: em($maxWidth)) {
+			top: toRem(-80);
+		}
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		border-radius: 50%;
+		@include adaptiveValue('width', 64, 48);
+		@include adaptiveValue('height', 64, 48);
+		background-color: rgba(32, 61, 54, 0.7);
+		svg {
+			transition: all 0.3s;
+			fill: var(--2-merino);
+			@include adaptiveValue('width', 32, 26);
+			@include adaptiveValue('height', 32, 26);
+		}
+		@media (any-hover: hover) {
+			&:hover {
+				svg {
+					fill: var(--2-peach);
+				}
+			}
+		}
+	}
+}
+// ! Menu Button
+.buttons-menu {
+	display: flex;
+	flex-direction: column;
+	position: fixed;
+	z-index: 100;
+	@media (min-width: em($maxWidthContainer)) {
+		left: 92%;
+		bottom: 50%;
+	}
+	@media (max-width: em($maxWidthContainer)) {
+		right: toRem(15);
+		bottom: 30%;
+	}
+}
+.button-menu {
+}
+
+#main-div {
+	// position: fixed;
+	// z-index: 100;
+
+	// @media (min-width: em($maxWidth)) {
+	// 	// left: calc(50% + 750px);
+	// 	left: 95%;
+	// 	bottom: 50%;
+	// }
+	// @media (max-width: em($maxWidth)) {
+	// 	left: 97%;
+	// 	bottom: 30%;
+	// }
+	// @media (max-width: $tablet) {
+	// 	bottom: 10%;
+	// }
+	// @media (max-width: $mobileSmall) {
+	// 	left: 96%;
+	// }
+}
+
+#main-button {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	position: absolute;
+	right: 0;
+	bottom: 0;
+	@include adaptiveValue('width', 64, 48);
+	@include adaptiveValue('height', 64, 48);
+	// font-size: 20px;
+	color: #0064f3;
+	cursor: pointer;
+	background: var(--2-peach) url('@img/button-menu-icons/chat.svg') 50% no-repeat;
+	box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5);
+	border-radius: 50%;
+	@media (max-width: $mobile) {
+		background: var(--2-peach) url('@img/button-menu-icons/chat.svg') 50% / 24px 24px no-repeat;
+	}
+	@media (max-width: $mobileSmall) {
+		background: var(--2-peach) url('@img/button-menu-icons/chat.svg') 50% / 20px 20px no-repeat;
+	}
+}
+#main-button.open {
+	background: #151515 url('@img/button-menu-icons/close.svg') 50% no-repeat;
+}
+#main-button.open ~ button {
+	visibility: visible;
+	right: 70px;
+	opacity: 1;
+	transition: 0.4s all cubic-bezier(0, 0.01, 0, 1.27);
+}
+
+#main-button ~ a {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	cursor: pointer;
+	position: absolute;
+	right: 0;
+	bottom: 0;
+	z-index: -1;
+	@include adaptiveValue('width', 64, 48);
+	@include adaptiveValue('height', 64, 48);
+	font-size: 20px;
+	opacity: 0;
+	text-decoration: none;
+	color: #fff;
+	background-color: #fff;
+	box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5);
+	border-radius: 50%;
+	transition: 0.2s all linear;
+}
+
+#main-button ~ .telegram-color {
+	background: #248dc1 url('@img/button-menu-icons/telegram.svg') 50% no-repeat;
+}
+
+#main-button ~ .phone-color {
+	background: #151515 url('@img/button-menu-icons/phone.svg') 50% no-repeat;
+}
+
+#main-button ~ .messenger-color {
+	background-color: linear-gradient(0deg, #0078ff, #73ff00);
+}
+
+#main-button.open ~ a {
+	opacity: 1;
+	transition: 0.4s all cubic-bezier(0, 0.01, 0, 1.27);
+}
+#main-button.open ~ a:nth-of-type(1) {
+	@include adaptiveValue('bottom', 80, 60);
+}
+#main-button.open ~ a:nth-of-type(2) {
+	@include adaptiveValue('bottom', 160, 120);
+}
+#main-button.open ~ a:nth-of-type(3) {
+	bottom: 180px;
+}
+
+.wave {
+	animation-name: wave;
+	animation-duration: 1s;
+	animation-timing-function: linear;
+	animation-iteration-count: infinite;
+}
+
+@keyframes wave {
+	0% {
+		box-shadow: 0 0 0px 0px rgba(255, 255, 255, 0.5);
+	}
+	100% {
+		box-shadow: 0 0 0px 10px rgba(255, 255, 255, 0);
+	}
+}
+
+.open {
+	animation-iteration-count: 1;
+}

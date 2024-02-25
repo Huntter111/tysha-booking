@@ -1,27 +1,113 @@
 .menu {
+	&__logo {
+		@include adaptiveValue('padding-right', 275, 0, 0, $maxWidthContainer, 768);
+		// flex-grow: 1;
+		img {
+			@include adaptiveValue('width', 81, 40);
+			@include adaptiveValue('height', 100, 48);
+		}
+	}
+	&__icon {
+	}
+	&__body {
+	}
+	&__list {
+	}
+	&__item {
+	}
+	&__link {
+	}
+	&__social {
+	}
+}
+.social {
+	display: flex;
+	align-items: center;
+	gap: toRem(16);
+	&__link {
+		& > svg {
+			transition: all 0.3s;
+			width: toRem(24);
+			height: toRem(24);
+			fill: #f7efe8;
+			@include adaptiveValue('font-size', 18, 14);
+			@media (any-hover: hover) {
+				&:hover {
+					fill: #d4a288;
+				}
+			}
+		}
+		&--green {
+			@media (min-width: $mobile) {
+				& > svg {
+					@media (min-width: $mobile) {
+						fill: var(--2-deep-green) !important;
+					}
+					@media (any-hover: hover) {
+						&:hover {
+							fill: #d4a288 !important;
+						}
+					}
+				}
+			}
+		}
+		&--facebook {
+		}
+		&--instagram {
+		}
+		&--telegram {
+		}
+	}
+	&--mobile {
+		@media (min-width: $mobile) {
+			display: none;
+		}
+	}
+	&--full-page {
+		@media (max-width: $mobile) {
+			display: none;
+		}
+	}
+}
+.menu {
 	// .menu__icon
 	&__icon {
+		&--green {
+			// background-color: #203d36;
+		}
 	}
 	// .menu__body
 	&__body {
+		z-index: 5;
+		display: flex;
+		flex-grow: 1;
+		column-gap: toRem(30);
 		@media (max-width: $mobile) {
+			flex-direction: column;
+			align-items: center;
+			row-gap: toRem(30);
 			position: fixed;
-			width: 100%;
+			width: 45.4%;
 			height: 100%;
 			left: -100%;
 			top: 0;
 			overflow: auto;
-			padding: toRem(50) toRem(15) toRem(15) toRem(30);
+			padding: toRem(50) toRem(15) toRem(32) toRem(15);
+			border-radius: 0px toRem(8) toRem(8) 0px;
+			@include adaptiveValue('padding-top', 100, 52, 0, 768, 320);
 			transition: left 0.3s;
+			background-color: #203d36;
 			&::before {
-				content: "";
+				content: '';
 				position: fixed;
-				width: 100%;
-				height: toRem(70);
+				border-radius: 0px toRem(8) toRem(8) 0px;
+				width: 45.4%;
+				height: toRem(50);
 				left: -100%;
 				top: 0;
 				transition: left 0.3s;
-				z-index: 2;
+				z-index: 6;
+				background-color: #203d36;
 			}
 			.menu-open & {
 				left: 0;
@@ -33,7 +119,14 @@
 	}
 	// .menu__list
 	&__list {
+		display: flex;
+		flex-grow: 1;
+		@include adaptiveValue('column-gap', 48, 30, 0, $maxWidthContainer, 768);
+		// @include adaptiveValue('padding-right', 140, 0, 0, $maxWidthContainer, 768);
 		@media (max-width: $mobile) {
+			flex-direction: column;
+			align-items: center;
+			row-gap: toRem(12);
 		}
 	}
 	// .menu__item
@@ -41,33 +134,47 @@
 	}
 	// .menu__link
 	&__link {
+		transition: all 0.3s;
+		@include adaptiveValue('font-size', 18, 14);
+		@media (any-hover: hover) {
+			&:hover {
+				color: #d4a288;
+			}
+		}
 		@media (max-width: $mobile) {
 		}
 	}
 }
 
 //Burger Icon
-.icon-menu {
+.icon-menu-open {
 	display: none;
 	@media (max-width: $mobile) {
 		display: block;
 		position: relative;
-		width: toRem(30);
-		height: toRem(18);
-		z-index: 5;
+		@include adaptiveValue('width', 30, 27, 0, 768, 320);
+		@include adaptiveValue('height', 18, 12, 0, 768, 320);
+
+		z-index: 0;
 		@media (any-hover: none) {
 			cursor: default;
 		}
 		span,
 		&::before,
 		&::after {
-			content: "";
+			content: '';
 			transition: all 0.3s ease 0s;
 			right: 0;
 			position: absolute;
 			width: 100%;
 			height: toRem(2);
-			background-color: #000;
+			@media (max-width: $mobileSmall) {
+				height: toRem(1);
+			}
+			background-color: #f7efe8;
+			// background-color: #203d36;
+			// transform: rotate(180deg);
+			border-radius: toRem(30);
 		}
 		&::before {
 			top: 0;
@@ -78,21 +185,28 @@
 		span {
 			top: calc(50% - toRem(1));
 		}
-		.menu-open & {
-			span {
-				width: 0;
-			}
+		&--green {
+			span,
 			&::before,
 			&::after {
-			}
-			&::before {
-				top: calc(50% - toRem(1));
-				transform: rotate(-45deg);
-			}
-			&::after {
-				bottom: calc(50% - toRem(1));
-				transform: rotate(45deg);
+				background-color: #203d36;
 			}
 		}
+		// .menu-open & {
+		// 	span {
+		// 		width: 0;
+		// 	}
+		// 	&::before,
+		// 	&::after {
+		// 	}
+		// 	&::before {
+		// 		top: calc(50% - toRem(1));
+		// 		transform: rotate(-45deg);
+		// 	}
+		// 	&::after {
+		// 		bottom: calc(50% - toRem(1));
+		// 		transform: rotate(45deg);
+		// 	}
+		// }
 	}
 }

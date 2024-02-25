@@ -26,29 +26,39 @@
 	}
 	._spoller-init & {
 		cursor: pointer;
-		&::before,
+
 		&::after {
-			content: "";
+			content: '';
 			position: absolute;
 			right: 10px;
 			top: 50%;
-			background-color: #000;
-			height: 2px;
-			width: 15px;
+			// background-color: #000;
+			background: var(--2-peach) url('@img/icons/arrow-spoller.svg') 50% no-repeat;
+			@include adaptiveValue('height', 48, 32);
+			@include adaptiveValue('width', 48, 32);
+			border-radius: 50%;
 			transition: transform 0.5s ease 0s;
+			@media (max-width: $mobileSmall) {
+				background: var(--2-peach) url('@img/icons/arrow-spoller--small.svg') 50% no-repeat;
+			}
 		}
-		&::before {
-			transform: translate(-75%, -50%) rotate(40deg);
-		}
+		// &::before {
+		// 	transform: translate(-75%, -50%) rotate(40deg);
+		// }
 		&::after {
-			transform: translate(0, -50%) rotate(-40deg);
+			transform: translate(0, -50%);
 		}
 		&._spoller-active {
-			&::before {
-				transform: translateX(-75%) rotate(-40deg);
-			}
+			// &::before {
+			// 	transform: translateX(-75%) rotate(-40deg);
+			// }
 			&::after {
-				transform: rotate(40deg);
+				transform: translate(0, -50%) rotate(-180deg);
+				background: var(--2-peach) url('@img/icons/arrow-spoller-green.svg') 50% no-repeat;
+				@media (max-width: $mobileSmall) {
+					// transform: translate(0, -50%) rotate(180deg);
+					background: var(--2-peach) url('@img/icons/arrow-spoller-green--small.svg') 50% no-repeat;
+				}
 			}
 		}
 		/*

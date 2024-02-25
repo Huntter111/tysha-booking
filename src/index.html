@@ -1,150 +1,748 @@
-<!DOCTYPE html>
-<html>
-	<head>
-		<meta charset="UTF-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<title>Верстка «NEW_PROJECT_NAME»</title>
-	</head>
+<!doctype html>
+<html lang="en">
+	@@include('html/_head.htm',{ "title":"Відпочинок в Tysha" })
 	<body>
-		<div class="rootpage">
-			<h1>Верстка «NEW_PROJECT_NAME»</h1>
-			<div class="rootpage__info">
-				Опис проєкту
-			</div>
-			<h2>Готові сторінки:</h2>
-			<ol class="rootpage__list">
-				<li><a target="_blank" href="home.html">Головна</a></li>
-			</ol>
-			<h2>Попапи:</h2>
-			<ol class="rootpage__list">
-				<li><a target="_blank" href="home.html#"></a></li>
-			</ol>
-			<div class="rootpage__tnx">
-				<h2>Дякую за замовлення!</h2>
-				<p>Буду радий (да) гарному відгуку.</p>
-				<p>Звертайтесь ще!</p>
-			</div>
-			<div class="rootpage__contacts">
-				<h2>Мої контакти:</h2>
-				<p>Пошта: <a href="mailto:email@gmail.com">email@gmail.com</a></p>
-				<p>Телефон: <a href="tel:8800800800">8 800 800 800</a></p>
-				<p>Соц. мережі: <a href="">посилання</a></p>
-			</div>
-		</div>
-	</body>
-	<style>
-		@charset "UTF-8";
-		@import url("https://fonts.googleapis.com/css?family=Montserrat:regular,700&display=swap");
-		* ,*::before, *::after {
-			padding: 0px;
-			margin: 0px;
-			border: 0px;
-			box-sizing: border-box; 
-		}
-		html, body {
-			height: 100%;
-			margin: 0;
-			padding: 0;
-			min-width: 320px;
-			width: 100%;
-			color: #fff;
-			background-color: #5e5373;
-		}
-		body {
-			font-family: Montserrat;
-			font-size: 100%;
-			line-height: 1;
-			font-size: 1rem;
-		}
-		a {
-			text-decoration: underline;
-			color: #ebe691
-		}
-		a:visited {
-			text-decoration: underline;
-			color: #aaa768;
-		}
-			a:hover {
-			text-decoration: none;
-		}
-		ul li {
-			list-style: none;
-		}
-		img {
-			vertical-align: top;
-		}
-		.wrapper {
-			width: 100%;
-			min-height: 100%;
-			overflow: hidden;
-		}
-		.rootpage{
-			padding: 30px;
-			display: flex;
-			flex-direction: column;
-			align-items: flex-start;
-		}
-		@media (max-width: 767px) {
-			.rootpage{
-				padding:30px 15px;
-			}
-		}
-		h1 {
-			color: #ebe691;
-			font-size: 2.5rem;
-			margin: 0px 0px 1.25rem 0px;
-		}
-		@media (max-width: 767px) {
-			h1 {
-				font-size: 1.85rem;
-				margin: 0px 0px 1.25rem 0px;
-			}
-		}
-		h2 {
-			color: #ebe691;
-			font-size: 1.25rem;
-			margin: 0px 0px 1rem 0px;
-		}
-		@media (max-width: 767px) {
-			 h2 {
-				font-size: 1.125rem;
-				margin: 0px 0px 1rem 0px;
-			}
-		}
-		.rootpage__info{
-			line-height: 140%;
-			margin: 0px 0px 1.5rem 0px;
-		}
+		<div class="wrapper">
+			@@include('html/_header.htm',{})
+			<main class="page">
+				<div class="buttons-menu">
+					<div class="button-menu">
+						<div id="main-div">
+							<div id="main-button" class="wave">
+								<i class="fas fa-comments fa-times"></i>
+							</div>
+							<a href="https://t.me/TyshaTatariv" class="telegram-color main-button__link" target="_blank"
+								><i class="fab fa-telegram-plane"></i
+							></a>
+							<a
+								href="#"
+								data-goto=".investment-tysha-form"
+								data-goto-top="30"
+								class="phone-color main-button__link"
+								><i class="fab fa-whatsapp"></i
+							></a>
+						</div>
+					</div>
+					<a data-watch href="#" data-goto=".main-page" class="arrow-up">
+						<div class="arrow-up__wrapper">
+							<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 33 33" fill="none">
+								<path
+									d="M3.40596 22.7016C3.65966 22.9479 4.00078 23.0833 4.3543 23.078C4.70781 23.0728 5.04478 22.9274 5.29109 22.6738L16.1837 11.4541L27.4033 22.3466C27.6584 22.5858 27.9971 22.7152 28.3466 22.707C28.6961 22.6988 29.0285 22.5536 29.272 22.3028C29.5155 22.0519 29.6508 21.7155 29.6486 21.3659C29.6465 21.0163 29.5071 20.6815 29.2606 20.4336L17.0844 8.61244C16.8307 8.36621 16.4896 8.23082 16.136 8.23605C15.7825 8.24128 15.4456 8.3867 15.1993 8.64033L3.37807 20.8165C3.13183 21.0702 2.99645 21.4113 3.00168 21.7649C3.00691 22.1184 3.15233 22.4553 3.40596 22.7016Z"
+								/>
+							</svg>
+						</div>
+					</a>
+				</div>
+				<section class="main-page">
+					<!-- Оболонка слайдера -->
 
-		.rootpage__list{
-			margin: 0px 0px 2.25rem 1.25rem;
-		}
-		.rootpage__list li:not(:last-child){
-			margin: 0px 0px 15px 0px;
-		}
-		.rootpage__contacts,
-		.rootpage__tnx{
-			border-radius: 200px;
-			padding: 20px 65px;
-			line-height: 140%;
-		}
-		@media (max-width: 767px){
-		.rootpage__contacts,
-		.rootpage__tnx{
-			border-radius:40px;
-			padding: 20px;
-		}
-		}
-		.rootpage__contacts{
-			background: #32b5a4;
-			
-		}
-		.rootpage__contacts a{
-			color: #ebe691;
-		}
-		.rootpage__tnx{
-			background: #c22d63;
-			margin: 0px 0px 1rem 0px;
-		}
-	</style>
+					<div class="main-page__slider swiper">
+						<!-- Частина слайдера, що рухається -->
+						<div class="main-page__wrapper swiper-wrapper">
+							<!-- Слайд 1-->
+							<div class="main-page__slide swiper-slide swiper-slide-main">
+								<div class="swiper-slide-main__bg swiper-slide-main__bg-one">
+									<img src="@img/main-page/main/01.png" class="ibg" alt="Перша картинка" />
+								</div>
+								<div class="swiper-slide-main__container">
+									<div class="swiper-slide-main__body">
+										<div class="swiper-slide-main__headline">
+											<h1 class="swiper-slide-main__title">ЖИТИ В ТИШІ</h1>
+											<h2 class="swiper-slide-main__sub-title">
+												внутрішній спокій, який дозволяє тобі слухати свої власні думки
+											</h2>
+										</div>
+										<div class="swiper-slide-main__buttons">
+											<a href="booking.html" class="button" target="_blank">забронювати</a>
+											<a
+												href="https://tyshahotel.online/index.html#investment-tysha-form"
+												data-goto=".investment-tysha-form"
+												data-goto-top="30"
+												target="_blank"
+												class="button-border"
+												>інвестувати</a
+											>
+										</div>
+									</div>
+								</div>
+							</div>
+							<!-- Слайд 2-->
+							<div class="main-page__slide swiper-slide swiper-slide-main">
+								<div class="swiper-slide-main__bg swiper-slide-main__bg-two">
+									<img src="@img/main-page/main/02.png" class="ibg" alt="Друга картинка" />
+								</div>
+								<div class="swiper-slide-main__container">
+									<div class="swiper-slide-main__body">
+										<div class="swiper-slide-main__headline">
+											<h1 class="swiper-slide-main__title">ЖИТИ В ТИШІ</h1>
+											<h2 class="swiper-slide-main__sub-title">
+												внутрішній спокій, який дозволяє тобі слухати свої власні думки
+											</h2>
+										</div>
+										<div class="swiper-slide-main__buttons">
+											<a href="booking.html" class="button" target="_blank">забронювати</a>
+											<a
+												href="https://tyshahotel.online/index.html#investment-tysha-form"
+												data-goto=".investment-tysha-form"
+												data-goto-top="30"
+												target="_blank"
+												class="button-border"
+												>інвестувати</a
+											>
+										</div>
+									</div>
+								</div>
+							</div>
+							<!-- Слайд 3-->
+							<div class="main-page__slide swiper-slide swiper-slide-main">
+								<div class="swiper-slide-main__bg swiper-slide-main__bg-two">
+									<img src="@img/main-page/main/03.png" class="ibg" alt="Третя картинка" />
+								</div>
+								<div class="swiper-slide-main__container">
+									<div class="swiper-slide-main__body">
+										<div class="swiper-slide-main__headline">
+											<h1 class="swiper-slide-main__title">ЖИТИ В ТИШІ</h1>
+											<h2 class="swiper-slide-main__sub-title">
+												внутрішній спокій, який дозволяє тобі слухати свої власні думки
+											</h2>
+										</div>
+										<div class="swiper-slide-main__buttons">
+											<a href="booking.html" class="button" target="_blank">забронювати</a>
+											<a
+												href="https://tyshahotel.online/index.html#investment-tysha-form"
+												data-goto=".investment-tysha-form"
+												data-goto-top="30"
+												target="_blank"
+												class="button-border"
+												>інвестувати</a
+											>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<!-- Пагінація -->
+						<div class="swiper-pagination main-page-pagination"></div>
+						<div class="swiper-fraction-pagination"></div>
+						<!-- Якщо потрібна навігація (ліворуч/праворуч) -->
+						<div class="main-page-swiper__buttons">
+							<button type="button" class="swiper-button-prev main-page__button-prev"></button>
+							<button type="button" class="swiper-button-next main-page__button-next"></button>
+						</div>
+					</div>
+					<div class="main-page__navigation">
+						<!-- Оболонка слайдера -->
+						<div class="main-page-thumb__slider swiper">
+							<!-- Частина слайдера, що рухається -->
+							<div class="main-page-thumb__wrapper swiper-wrapper">
+								<!-- Слайд 1 -->
+								<div class="main-page-thumb__slide swiper-slide">
+									<div class="main-page-thumb__body">
+										<div class="main-page-thumb__number">1.</div>
+										<div class="main-page-thumb__text text">Будинки</div>
+									</div>
+								</div>
+								<!-- Слайд 2 -->
+								<div class="main-page-thumb__slide swiper-slide">
+									<div class="main-page-thumb__body">
+										<div class="main-page-thumb__number">2.</div>
+										<div class="main-page-thumb__text text">Природа</div>
+									</div>
+								</div>
+								<!-- Слайд 3 -->
+								<div class="main-page-thumb__slide swiper-slide">
+									<div class="main-page-thumb__body">
+										<div class="main-page-thumb__number">3.</div>
+										<div class="main-page-thumb__text text">Інфраструктура</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
+				<div id="target"></div>
+				<section class="about-us">
+					<div class="about-us__container">
+						<div class="about-us__wrapper">
+							<div class="about-us__headline">
+								<h2 class="about-us__title title">Про нас</h2>
+								<h3 class="about-us__sub-title">“TYSHA” в центрі всього</h3>
+							</div>
+							<div class="about-us__items">
+								<div class="about-us__item">
+									<div class="about-us__body">
+										<p>
+											“TYSHA” розташована між трьох гір: Хом’як, Маґура, Ягідна. На висоті 684 метри над
+											рівнем моря.
+										</p>
+
+										<p>
+											Для “TYSHA” ми шукали ділянку, де б майбутні мешканці відчували максимальне поєднання з
+											горами, щоб не зруйнувати ідеальну картину, створену природою
+										</p>
+									</div>
+									<div class="about-us__image">
+										<img src="@img/main-page/about-us/01.png" alt="Фото" class="ibg" />
+										<span>У ці секунди народилася Тиша</span>
+									</div>
+								</div>
+								<div class="about-us__item">
+									<div class="about-us__body">
+										<p>
+											Татарів розташований на висоті 750 метрів у долині річки Прут,входить у межі
+											Карпатського національного природного парку. Його особливість – він тягнеться 25 км
+											вздовж мальовничого Прута.
+										</p>
+
+										<p>
+											Комплекс побудований на березі ріки Прут, яка бере свій початок з найвищої точки
+											України – з гори Говерла.
+										</p>
+									</div>
+									<div class="about-us__image">
+										<img src="@img/main-page/about-us/02.png" alt="Фото" class="ibg" />
+										<span>р. Прут</span>
+									</div>
+								</div>
+								<div class="about-us__item">
+									<div class="about-us__body">
+										<p>
+											ТYSHA – місце сили, де ви зможете по-справжньому відновити свій енергетичний баланс.
+										</p>
+
+										<p>
+											Для цього ми передбачили зону для медитації, басейн з підігрівом, кострище, зону
+											барбекю та чани, якими можна скористатися у будь-який час. І, звісно, довкола
+											неймовірні краєвиди.
+										</p>
+									</div>
+									<div class="about-us__image">
+										<img src="@img/main-page/about-us/03.png" alt="Фото" class="ibg" />
+										<span>Місце для релаксу та відновлення ресурсу</span>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
+				<section class="building">
+					<div class="building__container">
+						<h2 class="building__title title">Будинки</h2>
+						<div class="building__body">
+							<div class="building__content content-building">
+								<p class="content-building__text">
+									Для поціновувачів простору, але водночас затишку. Ідеальне рішення для проживання родини з
+									дітьми або ж невеликої компанії друзів. Є дві спальні, а також вітальня з каміном, де можна
+									розташувати додаткових гостей.
+								</p>
+								<div class="content-building__description">
+									<div class="content-building__area">Площа котеджу <span>– 72 m² з терасою</span></div>
+									<div class="content-building__income">кількість гостей <span>– 4(+2) особи</span></div>
+								</div>
+								<div class="content-building__price">
+									<div class="content-building__weekdays">Будні - 7500 / за добу</div>
+									<div class="content-building__weekends">Вихідні - 7800 грн / за добу</div>
+									<div class="content-building__additionaly">+ 1500 грн за додаткове ліжко</div>
+								</div>
+								<div class="content-building__buttons">
+									<a href="https://tyshahotel.online/building.html" class="content-building__button button"
+										>Детальніше</a
+									>
+								</div>
+							</div>
+
+							<div class="building__slider slider-building">
+								<h3 class="slider-building__title">Будинки (72m²)</h3>
+								<div class="slider-building__box">
+									<!-- Оболонка слайдера -->
+									<div class="slider-building__slider swiper-block-style__slider swiper">
+										<!-- Частина слайдера, що рухається -->
+										<div class="slider-building__wrapper swiper-block-style__wrapper swiper-wrapper">
+											<!-- Слайд 1 -->
+											<div class="slider-building__slide swiper-block-style__slide swiper-slide">
+												<img src="@img/main-page/buildings/1.png" alt="Зображення будинка" class="ibg" />
+											</div>
+
+											<div class="slider-building__slide swiper-block-style__slide swiper-slide">
+												<img src="@img/main-page/buildings/2.png" alt="Зображення будинка" class="ibg" />
+											</div>
+
+											<div class="slider-building__slide swiper-block-style__slide swiper-slide">
+												<img src="@img/main-page/buildings/3.png" alt="Зображення будинка" class="ibg" />
+											</div>
+
+											<div class="slider-building__slide swiper-block-style__slide swiper-slide">
+												<img src="@img/main-page/buildings/4.png" alt="Зображення будинка" class="ibg" />
+											</div>
+
+											<div class="slider-building__slide swiper-block-style__slide swiper-slide">
+												<img src="@img/main-page/buildings/5.png" alt="Зображення будинка" class="ibg" />
+											</div>
+
+											<div class="slider-building__slide swiper-block-style__slide swiper-slide">
+												<img src="@img/main-page/buildings/6.png" alt="Зображення будинка" class="ibg" />
+											</div>
+
+											<div class="slider-building__slide swiper-block-style__slide swiper-slide">
+												<img src="@img/main-page/buildings/7.png" alt="Зображення будинка" class="ibg" />
+											</div>
+
+											<div class="slider-building__slide swiper-block-style__slide swiper-slide">
+												<img src="@img/main-page/buildings/8.png" alt="Зображення будинка" class="ibg" />
+											</div>
+
+											<div class="slider-building__slide swiper-block-style__slide swiper-slide">
+												<img src="@img/main-page/buildings/9.png" alt="Зображення будинка" class="ibg" />
+											</div>
+
+											<div class="slider-building__slide swiper-block-style__slide swiper-slide">
+												<img src="@img/main-page/buildings/10.png" alt="Зображення будинка" class="ibg" />
+											</div>
+
+											<div class="slider-building__slide swiper-block-style__slide swiper-slide">
+												<img src="@img/main-page/buildings/11.png" alt="Зображення будинка" class="ibg" />
+											</div>
+
+											<div class="slider-building__slide swiper-block-style__slide swiper-slide">
+												<img src="@img/main-page/buildings/12.png" alt="Зображення будинка" class="ibg" />
+											</div>
+
+											<div class="slider-building__slide swiper-block-style__slide swiper-slide">
+												<img src="@img/main-page/buildings/13.png" alt="Зображення будинка" class="ibg" />
+											</div>
+
+											<div class="slider-building__slide swiper-block-style__slide swiper-slide">
+												<img src="@img/main-page/buildings/14.png" alt="Зображення будинка" class="ibg" />
+											</div>
+
+											<div class="slider-building__slide swiper-block-style__slide swiper-slide">
+												<img src="@img/main-page/buildings/15.png" alt="Зображення будинка" class="ibg" />
+											</div>
+											<div class="slider-building__slide swiper-block-style__slide swiper-slide">
+												<img src="@img/main-page/buildings/16.png" alt="Зображення будинка" class="ibg" />
+											</div>
+											<div class="slider-building__slide swiper-block-style__slide swiper-slide">
+												<img src="@img/main-page/buildings/17.png" alt="Зображення будинка" class="ibg" />
+											</div>
+										</div>
+									</div>
+									<!-- Якщо потрібна пагінація -->
+									<div
+										class="swiper-block-style__pagination slider-building-pagination swiper-pagination"
+									></div>
+									<!-- Якщо потрібна навігація (ліворуч/праворуч) -->
+									<div class="swiper-block-style__buttons slider-building__buttons">
+										<button
+											type="button"
+											class="swiper-button-prev swiper-block-style-button-prev slider-building-button-prev"
+										></button>
+										<button
+											type="button"
+											class="swiper-button-next swiper-block-style-button-next slider-building-button-next"
+										></button>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
+
+				<section class="infrastructure">
+					<div class="infrastructure__container">
+						<div class="infrastructure__headline">
+							<h2 class="infrastructure__title">інфраструктура</h2>
+							<h3 class="infrastructure__sub-title">
+								Тут ви зможете розслабитися та відновити свій енергетичний баланс 
+							</h3>
+						</div>
+					</div>
+					<div class="infrastructure__box box">
+						<!-- Оболонка слайдера -->
+
+						<div class="infrastructure__slider swiper-block-style__slider swiper">
+							<!-- Частина слайдера, що рухається -->
+							<div class="infrastructure__wrapper swiper-block-style__wrapper swiper-wrapper">
+								<!-- Слайд -->
+								<div class="infrastructure__slide swiper-block-style__slide swiper-slide">
+									<img src="@img/main-page/infrastructure/1.png" alt="" class="ibg" />
+								</div>
+								<!-- Слайд -->
+								<div class="infrastructure__slide swiper-block-style__slide swiper-slide">
+									<img src="@img/main-page/infrastructure/2.png" alt="" class="ibg" />
+								</div>
+								<!-- Слайд -->
+								<div class="infrastructure__slide swiper-block-style__slide swiper-slide">
+									<img src="@img/main-page/infrastructure/3.png" alt="" class="ibg" />
+								</div>
+								<!-- Слайд -->
+								<div class="infrastructure__slide swiper-block-style__slide swiper-slide">
+									<img src="@img/main-page/infrastructure/4.png" alt="" class="ibg" />
+								</div>
+								<!-- Слайд -->
+								<div class="infrastructure__slide swiper-block-style__slide swiper-slide">
+									<img src="@img/main-page/infrastructure/5.png" alt="" class="ibg" />
+								</div>
+							</div>
+							<!-- Якщо потрібна пагінація -->
+							<!-- Якщо потрібна навігація (ліворуч/праворуч) -->
+						</div>
+						<div class="swiper-block-style__buttons infrastructure-swiper__buttons">
+							<button
+								type="button"
+								class="swiper-button-prev swiper-block-style-button-prev infrastructure-swiper-button-prev"
+							></button>
+							<button
+								type="button"
+								class="swiper-button-next swiper-block-style-button-next infrastructure-swiper-button-next"
+							></button>
+						</div>
+						<div class="swiper-pagination swiper-block-style__pagination infrastructure-swiper-pagination"></div>
+					</div>
+				</section>
+				<div class="aside-advantages">
+					<div class="aside-advantages__container">
+						<div class="aside-advantages__items">
+							<div class="aside-advantages__item">
+								<div class="aside-advantages__image">
+									<img src="@img/main-page/advantages-icon/1.svg" alt="Перевага перша" />
+								</div>
+								<div class="aside-advantages__desc">басейн з підігрівом</div>
+							</div>
+							<div class="aside-advantages__item">
+								<div class="aside-advantages__image">
+									<img src="@img/main-page/advantages-icon/2.svg" alt="Перевага перша" />
+								</div>
+								<div class="aside-advantages__desc">зона барбекю</div>
+							</div>
+							<div class="aside-advantages__item">
+								<div class="aside-advantages__image">
+									<img src="@img/main-page/advantages-icon/3.svg" alt="Перевага перша" />
+								</div>
+								<div class="aside-advantages__desc">кострище</div>
+							</div>
+							<div class="aside-advantages__item">
+								<div class="aside-advantages__image">
+									<img src="@img/main-page/advantages-icon/4.svg" alt="Перевага перша" />
+								</div>
+								<div class="aside-advantages__desc">зона для медитації</div>
+							</div>
+							<div class="aside-advantages__item">
+								<div class="aside-advantages__image">
+									<img src="@img/main-page/advantages-icon/5.svg" alt="Перевага перша" />
+								</div>
+								<div class="aside-advantages__desc">чани</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<section class="activities">
+					<div class="activities__container">
+						<h2 class="activities__title title">Активності</h2>
+						<div class="activities__items">
+							<article class="activities__item">
+								<div class="activities__image">
+									<img src="@img/main-page/activities/1.png" alt="перша активність" class="ibg" />
+									<span>Піший туризм</span>
+								</div>
+								<div class="activities__body">
+									<p>
+										Ви можете вирушити в піші походи, “TYSHA” розташована в мальовничому та екологічно чистому
+										куточку, де поєднуються краса річки, лісу та гір
+									</p>
+								</div>
+							</article>
+							<article class="activities__item">
+								<div class="activities__image">
+									<img src="@img/main-page/activities/2.png" alt="друга активність" class="ibg" />
+									<span>Гірські лижі та сноубординг</span>
+								</div>
+								<div class="activities__body">
+									<p>
+										У зимовий період часу ви можете насолоджуватися лижним спортом або сноубордингом. Всього
+										15 хвилин від гірськолижного курорту “Буковель”
+									</p>
+								</div>
+							</article>
+							<article class="activities__item">
+								<div class="activities__image">
+									<img src="@img/main-page/activities/3.png" alt="третя активність" class="ibg" />
+									<span>Похід у гори</span>
+								</div>
+								<div class="activities__body">
+									<p>
+										Якщо ви любите високогір'я, можна влаштувати піші походи на гори, “TYSHA” розташована між
+										трьох гір: Хом’як, Маґура, Ягідна.
+									</p>
+								</div>
+							</article>
+							<article class="activities__item">
+								<div class="activities__image">
+									<img src="@img/main-page/activities/4.png" alt="четверта активність" class="ibg" />
+									<span>Збір грибів та ягід</span>
+								</div>
+								<div class="activities__body">
+									<p>
+										Ліси Карпат славляться своєю різноманітністю грибів та ягід. Це чудова можливість для
+										любителів активного відпочинку збирати запашні гриби до супу і різноманітні ягоди до чаю.
+									</p>
+								</div>
+							</article>
+							<article class="activities__item">
+								<div class="activities__image">
+									<img src="@img/main-page/activities/5.png" alt="п'ята активність" class="ibg" />
+									<span>Прогулянка по парку</span>
+								</div>
+								<div class="activities__body">
+									<p>
+										Татарів розташований на висоті 750 метрів у долині річки Прут,входить у межі Карпатського
+										національного природного парку. Його особливість – він тягнеться 25 км вздовж мальовничого
+										Прута.
+									</p>
+								</div>
+							</article>
+							<article class="activities__item">
+								<div class="activities__image">
+									<img src="@img/main-page/activities/6.png" alt="шоста активність" class="ibg" />
+									<span>Велосипедні прогулянки</span>
+								</div>
+								<div class="activities__body">
+									<p>
+										Взяти напрокат велосипед і вирушити в об'їзд села та його навколишніх гірських шляхів.
+										Вивчайте лісові траси та стежки, такі маршрути можуть бути відмінним варіантом для
+										природничих подорожей та гірських пригод.
+									</p>
+								</div>
+							</article>
+						</div>
+					</div>
+				</section>
+				<section class="contacts">
+					<div class="contacts__container">
+						<div class="contacts__wrapper">
+							<h2 class="contacts__title title">Контакти та Розташування</h2>
+							<div class="contacts__body">
+								<div class="contacts__info">
+									<div class="contacts__text">
+										<div class="contacts__desc">Дістатися до комплексу легко!</div>
+										<div class="contacts__desc">
+											Лише <b>5 хвилин</b> автівкою від станції Татарів та <b>15 хвилин</b> від
+											гірськолижного курорту “Буковель”
+										</div>
+									</div>
+									<div class="wrapper-contacts-social">
+										<div class="contacs">
+											<div class="contacs__item">
+												<div class="contacs__icon">
+													<svg>
+														<use xlink:href="@img/icons/icons.svg#email"></use>
+													</svg>
+												</div>
+												<a
+													href="mailto:tysha.tatariv.info@gmail.com"
+													class="contacs__link contacs__link-email"
+													target="_blank"
+													>tysha.tatariv.info@gmail.com</a
+												>
+											</div>
+											<div class="contacs__item">
+												<div class="contacs__icon">
+													<svg>
+														<use xlink:href="@img/icons/icons.svg#phone"></use>
+													</svg>
+												</div>
+												<a
+													href="tel:+380737772008"
+													class="contacs__link-phone contacs__link"
+													target="_blank"
+													>+38 073 777 20 08</a
+												>
+											</div>
+											<div class="contacs__item">
+												<div class="contacs__icon">
+													<svg>
+														<use xlink:href="@img/icons/icons.svg#location"></use>
+													</svg>
+												</div>
+												<a
+													href="https://maps.app.goo.gl/sWY111Rax5NdAVFg7"
+													class="contacs__link-location contacs__link"
+													target="_blank"
+													>с.Татарів Івано-Франківської області</a
+												>
+											</div>
+										</div>
+										<div class="social">
+											<a
+												href="https://www.facebook.com/tysha.tatariv.ua"
+												class="social__link social__link--green"
+											>
+												<svg>
+													<use xlink:href="@img/icons/icons.svg#facebook"></use>
+												</svg>
+											</a>
+											<a
+												href="https://www.instagram.com/tysha_tatariv_"
+												class="social__link social__link--green"
+											>
+												<svg>
+													<use xlink:href="@img/icons/icons.svg#instagram"></use>
+												</svg>
+											</a>
+											<a href="https://t.me/TyshaTatariv" class="social__link social__link--green">
+												<svg>
+													<use xlink:href="@img/icons/icons.svg#telegram"></use>
+												</svg>
+											</a>
+										</div>
+									</div>
+								</div>
+								<div data-da=".contacts__info, 768, 1" class="contacts__image">
+									<img src="@img/main-page/contacts/map.svg" class="ibg" alt="Карта до Тиші" />
+									<div class="contacts__button">
+										<a
+											href="https://www.google.com/maps/place/48%C2%B019'53.5%22N+24%C2%B034'41.2%22E/@48.3315252,24.5755249,17z/data=!3m1!4b1!4m4!3m3!8m2!3d48.3315252!4d24.5780998?hl=uk-UA&entry=tts"
+											class="button-bg"
+											target="_blank"
+											>Показати на мапі</a
+										>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
+				<section class="vibe">
+					<div class="vibe__container">
+						<div class="vibe__headline">
+							<h2 class="vibe__title title">Погрузись в атмосферу карпат</h2>
+							<h3 class="vibe__sub-title">
+								Ви отримаєте можливість зануритися в унікальну атмосферу цієї гірської місцевості, відчути її
+								енергію, яка відображається в природі, культурі та гостинності місцевих жителів.
+							</h3>
+						</div>
+					</div>
+					<div class="vibe__box box">
+						<!-- Оболонка слайдера -->
+						<div class="vibe__slider swiper-block-style__slider swiper">
+							<!-- Частина слайдера, що рухається -->
+							<div class="vibe__wrapper swiper-block-style__wrapper swiper-wrapper">
+								<!-- Слайд -->
+								<div class="vibe__slide swiper-block-style__slideslide swiper-slide">
+									<img src="@img/main-page/vibe/1.png" alt="" class="ibg" />
+								</div>
+								<!-- Слайд -->
+								<div class="vibe__slide swiper-block-style__slide swiper-slide">
+									<img src="@img/main-page/vibe/2.png" alt="" class="ibg" />
+								</div>
+								<!-- Слайд -->
+								<div class="vibe__slide swiper-block-style__slide swiper-slide">
+									<img src="@img/main-page/vibe/3.png" alt="" class="ibg" />
+								</div>
+								<!-- Слайд -->
+								<div class="vibe__slide swiper-block-style__slide swiper-slide">
+									<img src="@img/main-page/vibe/4.png" alt="" class="ibg" />
+								</div>
+								<!-- Слайд -->
+								<div class="vibe__slide swiper-block-style__slide swiper-slide">
+									<img src="@img/main-page/vibe/5.png" alt="" class="ibg" />
+								</div>
+							</div>
+						</div>
+						<!-- Якщо потрібна навігація (ліворуч/праворуч) -->
+						<div class="swiper-block-style__buttons vibe-swiper__buttons">
+							<button
+								type="button"
+								class="swiper-button-prev swiper-block-style-button-prev vibe-swiper-button-prev"
+							></button>
+							<button
+								type="button"
+								class="swiper-button-next swiper-block-style-button-next vibe-swiper-button-next"
+							></button>
+						</div>
+						<!-- Якщо потрібна пагінація -->
+						<div class="swiper-pagination swiper-block-style__pagination vibe-swiper-pagination"></div>
+					</div>
+					<div class="vibe__container">
+						<div class="vibe__button">
+							<a href="booking.html" class="button" target="_blank">Забронювати будинок</a>
+						</div>
+					</div>
+				</section>
+				<section class="faq">
+					<div class="faq__container">
+						<h2 class="faq__title title">FAQ</h2>
+						<div class="faq__body">
+							<div data-spollers data-one-spoller class="faq-spollers spollers">
+								<details class="faq-spollers__item spollers__item">
+									<summary class="faq-spollers__title spollers__title">Чи є у вас успішні кейси?</summary>
+									<div class="faq-spollers__body spollers__body">
+										Найяскравіші кейси: Єгор – “AMA resort”. В'ячеслав – приватний сектор в Совіньйоні та
+										мережа апартаментів в Одесі.
+									</div>
+								</details>
+								<details class="faq-spollers__item spollers__item">
+									<summary class="faq-spollers__title spollers__title">Скільки землі в проєкті?</summary>
+									<div class="faq-spollers__body spollers__body">Перша черга – 40 соток</div>
+								</details>
+								<details class="faq-spollers__item spollers__item">
+									<summary class="faq-spollers__title spollers__title">
+										Скільки землі виділено під кожен будинок?
+									</summary>
+									<div class="faq-spollers__body spollers__body">3 сотки</div>
+								</details>
+								<details class="faq-spollers__item spollers__item">
+									<summary class="faq-spollers__title spollers__title">Будинок продається із землею?</summary>
+									<div class="faq-spollers__body spollers__body">Так.</div>
+								</details>
+								<details class="faq-spollers__item spollers__item">
+									<summary class="faq-spollers__title spollers__title">
+										Кому належить земля за документами?
+									</summary>
+									<div class="faq-spollers__body spollers__body">Уся земля належить забудовникам</div>
+								</details>
+								<details class="faq-spollers__item spollers__item">
+									<summary class="faq-spollers__title spollers__title">Чи є розтермінування?</summary>
+									<div class="faq-spollers__body spollers__body">
+										Так. Ми пропонуємо наступні умови: 70% перший внесок та 6 місяців розтермінування.
+									</div>
+								</details>
+								<details class="faq-spollers__item spollers__item">
+									<summary class="faq-spollers__title spollers__title">
+										Скільки інвестор може проживати у своєму будинку без плати за проживання?
+									</summary>
+									<div class="faq-spollers__body spollers__body">20 днів на рік.</div>
+								</details>
+								<details class="faq-spollers__item spollers__item">
+									<summary class="faq-spollers__title spollers__title">Хто управляюча компанія?</summary>
+									<div class="faq-spollers__body spollers__body">
+										У нас є досвід гостинності, тож ми плануємо створити успішну керуючу компанію разом з
+										Вами🤝
+									</div>
+								</details>
+								<details class="faq-spollers__item spollers__item">
+									<summary class="faq-spollers__title spollers__title">
+										Як відбувається розрахунок з інвесторами?
+									</summary>
+									<div class="faq-spollers__body spollers__body">Розрахунок відбувається кожні 4 місяці.</div>
+								</details>
+								<details class="faq-spollers__item spollers__item">
+									<summary class="faq-spollers__title spollers__title">
+										Якщо мій будинок зайнятий гостями, я можу заїхати в інший?
+									</summary>
+									<div class="faq-spollers__body spollers__body">Так, у будь-який вільний.</div>
+								</details>
+								<details class="faq-spollers__item spollers__item">
+									<summary class="faq-spollers__title spollers__title">Кому належить інфраструктура?</summary>
+									<div class="faq-spollers__body spollers__body">Компанії DREAM HOMES</div>
+								</details>
+							</div>
+						</div>
+						<button class="faq__button button">Більше запитаннь</button>
+					</div>
+				</section>
+			</main>
+			@@include('html/_footer.htm',{})
+		</div>
+		@@include('html/_js.htm',{})
+	</body>
 </html>
