@@ -74,6 +74,9 @@
 		@media (max-width: $mobile) {
 			margin-bottom: toRem(32);
 		}
+		&--green {
+			background-color: var(--2-merino);
+		}
 	}
 
 	&__social-link {

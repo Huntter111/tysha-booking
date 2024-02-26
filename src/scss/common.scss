@@ -33,6 +33,9 @@
 			width: toRem(24);
 			height: toRem(24);
 		}
+		&--light {
+			fill: var(--2-merino);
+		}
 	}
 
 	&__link {

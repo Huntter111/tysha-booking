@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+	@@include('html/_head.htm',{ "title":"Упсс шось пішло не так" })
+	<body>
+		<div class="wrapper wrapper-thank-you">
+			@@include('html/_header-thank-you.htm',{})
+			<main class="page">
+				<section class="thank-you">
+					<div class="thank-you__container">
+						<div class="thank-you__wrapper">
+							<div class="thank-you__inner">
+								<div class="thank-you__headline">
+									<h2 class="thank-you__title thank-you__title--404">404</h2>
+									<h3 class="thank-you__sub-title">упс, щось пішло не так...</h3>
+								</div>
+								<a href="index.html" class="thank-you__button button">до головної сторінки</a>
+							</div>
+						</div>
+					</div>
+				</section>
+			</main>
+			@@include('html/_footer-thank-you.htm',{})
+		</div>
+		@@include('html/_js.htm',{})
+	</body>
+</html>
