@@ -28,6 +28,58 @@ import '../../scss/libs/swiper.scss';
 function initSliders() {
 	// Список слайдерів
 	// Перевіряємо, чи є слайдер на сторінці
+	// ! Select booking
+	if (document.querySelector('.slider-select__slider')) {
+		// Вказуємо склас потрібного слайдера
+		// Створюємо слайдер
+		new Swiper('.slider-select__slider', {
+			modules: [Navigation, Pagination, Autoplay, EffectFade],
+			observer: true,
+			observeParents: true,
+			speed: 500,
+			// loop: true,
+			spaceBetween: 30,
+			slidesPerView: 1,
+			autoplay: {
+				delay: 5000,
+				disableOnInteraction: false,
+			},
+			initialSlide: 2,
+			centeredSlides: true,
+			effect: 'fade',
+			// coverflowEffect: {
+			// 	depth: 60,
+			// 	modifier: 3,
+			// 	rotate: 0,
+			// 	stretch: 0,
+			// 	slideShadows: false,
+			// },
+			pagination: {
+				el: '.slider-select-pagination',
+				clickable: true,
+			},
+			navigation: {
+				prevEl: '.slider-select-button-prev',
+				nextEl: '.slider-select-button-next',
+			},
+			// breakpoints: {
+			// 	320: {
+			// 		slidesPerView: 1,
+			// 		spaceBetween: 30,
+			// 	},
+			// 	768: {
+			// 		slidesPerView: 1.334,
+			// 		spaceBetween: 100,
+			// 	},
+			// 	1240: {
+			// 		slidesPerView: 1.334,
+			// 		spaceBetween: 180,
+			// 	},
+			// },
+			on: {},
+		});
+	}
+
 	// ! Building
 	if (document.querySelector('.slider-building__slider')) {
 		// Вказуємо склас потрібного слайдера

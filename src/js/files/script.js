@@ -76,3 +76,18 @@ if (document.querySelector('.arrow-up')) {
 		}
 	});
 }
+// ! Booking page
+document.addEventListener('selectCallback', function (e) {
+	const selectedValue = e.detail.select.value;
+	// const slides = document.querySelectorAll('.location__slide');
+	const slides = document.querySelectorAll('.slider-select__slide');
+
+	slides.forEach((slide, index) => {
+		for (let i = 1; i <= 10; i++) {
+			const image = slide.querySelector(`.slider-select-iamge--${i}`);
+			if (!image) continue; // Якщо зображення з даним класом не знайдено, переходимо до наступного
+			image.style.display = i === parseInt(selectedValue) ? 'block' : 'none';
+		}
+	});
+});
+// !

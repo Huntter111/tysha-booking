@@ -17,6 +17,7 @@ textarea {
 	@include adaptiveValue('font-size', 18, 16);
 	border: toRem(0.5) solid var(--2-deep-green);
 	outline: none !important;
+	background-color: var(--2-merino);
 	&._form-focus {
 		color: var(--2-deep-green);
 	}
@@ -32,6 +33,7 @@ textarea {
 .input[placeholder]:not([data-placeholder-nohiden]) {
 	&::placeholder {
 		transition: opacity 0.3s;
+		// font-size: toRem(14);
 	}
 	&:focus::placeholder {
 		opacity: 0;
@@ -45,3 +47,17 @@ textarea.input {
 	// border: toRem(0.5) solid var(--2-deep-green);
 	max-height: toRem(100);
 }
+// #startDatePicker {
+// 	&::placeholder {
+// 		@media (max-width: $mobileSmall) {
+// 			font-size: toRem(15);
+// 		}
+// 	}
+// }
+// #endDatePicker {
+// 	&::placeholder {
+// 		@media (max-width: $mobile) {
+// 			font-size: toRem(15);
+// 		}
+// 	}
+// }
