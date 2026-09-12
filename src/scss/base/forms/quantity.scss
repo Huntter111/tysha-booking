@@ -1,0 +1,141 @@
+// //<QUANTITY>
+// ! Перший варіант
+// // Сніппет (HTML): qa
+// .quantity {
+// 	width: toRem(51);
+// 	height: toRem(23);
+// 	border: toRem(0.1) solid var(--2-deep-green);
+
+// 	._form-error & {
+// 		border: none; // При виявленні класу ._form-error прибираємо бордер
+// 	}
+// 	display: flex;
+// 	position: relative;
+// 	// border: 1px solid rgba(166, 166, 166, 0.45);
+// 	// .quantity__button
+// 	&__buttons {
+// 		width: toRem(20);
+// 		height: toRem(30);
+// 	}
+// 	&__button {
+// 		position: absolute;
+// 		flex: 0 0 toRem(12);
+// 		width: toRem(12);
+// 		height: toRem(5);
+// 		// top: 50%;
+// 		// right: 0;
+// 		cursor: pointer;
+// 		&::before,
+// 		&::after {
+// 			content: '';
+// 			position: absolute;
+
+// 			transition: all 0.3s ease 0s;
+// 			margin: 0px 0px 0px -4.5px;
+// 			// background-color: #a6a6a6;
+// 			// width: 9px;
+// 			// height: 1px;
+// 		}
+// 		&::before {
+// 		}
+// 		&::after {
+// 		}
+// 		@media (any-hover: hover) {
+// 			&:hover {
+// 				&::before,
+// 				&::after {
+// 					// background-color: rgba(0, 0, 0, 0.5);
+// 				}
+// 			}
+// 		}
+// 		// .quantity__button_plus
+// 		&--plus {
+// 			top: 20%;
+// 			right: 0;
+// 			background: url('@img/icons/quantity-arrow-up.svg') 0 0 / 12px 5px no-repeat;
+// 			//
+// 		}
+// 		// .quantity__button_minus
+// 		&--minus {
+// 			top: 60%;
+// 			right: 0;
+// 			background: url('@img/icons/quantity-arrow-down.svg') 0 0 / 12px 5px no-repeat;
+// 		}
+// 	}
+// 	// .quantity__input
+// 	&__input {
+// 		flex: 1 1 auto;
+// 		// border: toRem(0.1) solid #fc0000;
+// 		&._form-error {
+// 			border: toRem(0.1) solid #fc0000;
+// 		}
+// 		input {
+// 			height: 100%;
+// 			// color: #a6a6a6;
+// 			font-size: toRem(16);
+// 			max-width: toRem(34);
+// 			text-align: center;
+// 			&._form-error {
+// 				// border: toRem(0.1) solid #fc0000;
+// 				border: toRem(0.1) solid transparent;
+// 			}
+// 		}
+// 	}
+// }
+
+// ! Другий варіант
+//<QUANTITY>
+// Сніппет (HTML): qa
+.quantity {
+	width: 100px;
+	height: toRem(40);
+	display: flex;
+	border: toRem(0.1) solid var(--2-deep-green);
+	// .quantity__button
+	&__button {
+		flex: 0 0 toRem(40);
+		position: relative;
+		cursor: pointer;
+		&::before,
+		&::after {
+			content: '';
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transition: all 0.3s ease 0s;
+			margin: 0px 0px 0px -4.5px;
+			background-color: #a6a6a6;
+			width: 9px;
+			height: 1px;
+		}
+		@media (any-hover: hover) {
+			&:hover {
+				&::before,
+				&::after {
+					background-color: rgba(0, 0, 0, 0.5);
+				}
+			}
+		}
+		// .quantity__button_plus
+		&--plus {
+			&::before {
+				transform: rotate(-90deg);
+			}
+		}
+		// .quantity__button_minus
+		&--minus {
+			order: -1;
+		}
+	}
+	// .quantity__input
+	&__input {
+		flex: 1 1 auto;
+		input {
+			height: 100%;
+			// color: #a6a6a6;
+			@include adaptiveValue('font-size', 18, 16);
+			width: 100%;
+			text-align: center;
+		}
+	}
+}

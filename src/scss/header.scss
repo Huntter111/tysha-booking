@@ -1,0 +1,50 @@
+.header {
+	padding-top: toRem(24);
+	padding-bottom: toRem(24);
+	position: absolute;
+	width: 100%;
+	top: 0;
+	left: 0;
+	z-index: 100;
+	color: #f7efe8;
+	&--green {
+		@media (min-width: $mobile) {
+			color: var(--2-deep-green);
+		}
+	}
+	&__container {
+		display: flex;
+	}
+
+	&__menu {
+		flex-grow: 1;
+		display: flex;
+		align-items: center;
+		column-gap: toRem(30);
+		@media (max-width: $mobile) {
+			display: grid;
+			grid-template-columns: repeat(3, 1fr);
+			& > :nth-child(2) {
+				grid-column: 2;
+				margin: auto;
+			}
+		}
+	}
+	&__icon {
+		position: absolute;
+
+		@include adaptiveValue('top', 38, 16, 0, 768, 320);
+		@include adaptiveValue('right', 38, 16, 0, 768, 320);
+		top: toRem(16);
+		z-index: 20;
+
+		@media (min-width: $mobile) {
+			display: none;
+		}
+		& > svg {
+			stroke: #fefefe;
+			@include adaptiveValue('width', 30, 11, 0, 768, 320);
+			@include adaptiveValue('height', 30, 11, 0, 768, 320);
+		}
+	}
+}
