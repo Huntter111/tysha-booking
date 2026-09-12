@@ -67,6 +67,8 @@ import datepicker from 'js-datepicker';
 // }
 // ! РОбочий
 
+// ! РОбочий
+// ?
 if (document.querySelector('[data-datepicker]')) {
 	const currentDate = new Date();
 	const startDatePicker = datepicker('#startDatePicker', {

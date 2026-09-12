@@ -11,8 +11,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   	$message = $_POST["message"];
 
 	// Налаштування Telegram-бота
-	$botToken = "6326698251:AAG4khK9I-svNecAgxBSln9_g1UijVHI-6Y";
-	$chatId = "-977034876";
+	// $botToken = "6326698251:AAG4khK9I-svNecAgxBSln9_g1UijVHI-6Y";
+	// $chatId = "-977034876";
+	// ! new bot
+	$botToken = "6363776345:AAGCuvps3aPujrvYT6zeSpmQQZyaRQF_48w";
+	$chatId = "-4160967807";
+	
 
 	// Формування повідомлення
 	$text = "<b>Нове бронювання Tysha</b>\n";
@@ -20,7 +24,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 	$text .= "<b>Прізвище:</b> " . $lastNamePerson . "\n";
 	$text .= "<b>Телефон:</b> " . $phoneNumber . "\n";
 	$text .= "<b>Дата заїзду:</b> " . $startDate . "\n";
-	$text .= "<b>Дата від'їзду:</b> " . $endDate . "\n";
+	$text .= "<b>Дата виїзду:</b> " . $endDate . "\n";
 	$text .= "<b>Кількість гостей:</b> " . $quantity . "\n";
 	$text .= "<b>Повідомлення:</b> " . $message . "\n";
 
@@ -40,10 +44,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 	curl_close($ch);
 
 	if ($response) {
-		header("Location: http://warzone.org.ua/dist/thank-you-page.html");
+		header("Location: https://www.tyshahotel.com.ua/thank-you-page.html");
 		exit();
 	} else {
-		header("Location: http://warzone.org.ua/dist/404.html");
+		header("Location: https://www.tyshahotel.com.ua/404.html");
 		// echo "Error";
 	}
 }

@@ -1,0 +1,104 @@
+.privacy {
+	@include adaptiveValue('padding-top', 220, 150);
+	@include adaptiveValue('padding-bottom', 150, 50);
+	&__container {
+	}
+
+	&__title {
+		@include adaptiveValue('font-size', 25, 20);
+		font-weight: 700;
+		@include adaptiveValue('margin-bottom', 25, 15);
+	}
+
+	&__sub-title {
+		@include adaptiveValue('font-size', 23, 18);
+		margin-bottom: toRem(15);
+		margin-top: toRem(30);
+		font-weight: 700;
+	}
+
+	// ! BODY
+	&__body {
+		margin-bottom: toRem(15);
+	}
+	&__sub-title-body {
+		@include adaptiveValue('margin-top', 50, 25);
+		@include adaptiveValue('font-size', 25, 20);
+		font-weight: 700;
+		@include adaptiveValue('margin-bottom', 25, 15);
+	}
+	ol {
+		li {
+			@include adaptiveValue('font-size', 16, 14);
+			margin-bottom: toRem(15);
+			line-height: 1.4;
+			a {
+				border-bottom: toRem(1) solid rgb(0, 0, 0);
+				@media (any-hover: hover) {
+					&:hover {
+						color: #d4a288;
+						border-bottom: toRem(1) solid transparent;
+					}
+				}
+				transition: all 0.3s;
+			}
+		}
+	}
+}
+.privacy-text {
+	p {
+		@include adaptiveValue('font-size', 16, 14);
+		line-height: 1.4;
+		margin-bottom: toRem(15);
+		a {
+			border-bottom: toRem(1) solid #203d36;
+			@media (any-hover: hover) {
+				&:hover {
+					color: #d4a288;
+					border-bottom: toRem(1) solid transparent;
+				}
+			}
+			transition: all 0.3s;
+		}
+	}
+	ul {
+		li {
+			@include adaptiveValue('font-size', 16, 14);
+			margin-bottom: toRem(15);
+			@include adaptiveValue('padding-left', 25, 10);
+			position: relative;
+			&::before {
+				position: absolute;
+				content: '';
+				// @include adaptiveValue('width', 6, 4);
+				// @include adaptiveValue('height', 6, 4);
+				width: toRem(6);
+				height: toRem(6);
+				background-color: #000;
+				border-radius: 50%;
+				top: toRem(4);
+				@include adaptiveValue('left', 8, 0);
+			}
+		}
+	}
+}
+ol {
+	li {
+		list-style: none;
+	}
+}
+.menu__body--privacy {
+	@media (min-width: $mobile) {
+		color: #203d36;
+	}
+}
+// ol {
+// 	counter-reset: item;
+// }
+// li {
+// 	display: block;
+// }
+// li:before {
+// 	content: counters(item, '.') '. ';
+// 	counter-increment: item;
+// }

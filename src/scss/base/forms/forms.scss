@@ -55,6 +55,11 @@
 			@media (max-width: $mobileSmall) {
 				column-gap: toRem(15);
 			}
+			label {
+				&._form-error {
+					color: #bf2020;
+				}
+			}
 		}
 	}
 	&__line {
@@ -71,9 +76,9 @@
 	&__button {
 		display: flex;
 		justify-content: center;
-		@media (min-width: $mobile) {
-			justify-content: end;
-		}
+		// @media (min-width: $mobile) {
+		// 	justify-content: end;
+		// }
 	}
 	&__error {
 	}

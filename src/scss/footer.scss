@@ -54,13 +54,38 @@
 	}
 
 	&__wrapper {
+		// display: grid;
+		// grid-template-columns: repeat(2, 1fr);
+		// @media (max-width: $mobile) {
+		// 	grid-template-columns: 1fr;
+		// }
+	}
+	&__block {
 		display: grid;
-		grid-template-columns: repeat(2, 1fr);
+		@media (min-width: $mobile) {
+			grid-template-columns: repeat(2, 1fr);
+		}
 		@media (max-width: $mobile) {
-			grid-template-columns: 1fr;
+			grid-template-columns: repeat(1, 1fr);
+			row-gap: toRem(15);
+			justify-items: center;
 		}
 	}
-
+	&__privacy {
+		// Вирівнювання в середині grid контейнера
+		@include adaptiveValue('font-size', 18, 14);
+		@media (min-width: $mobile) {
+			// justify-self: end;
+		}
+		a {
+			@media (any-hover: hover) {
+				&:hover {
+					color: #d4a288;
+				}
+			}
+			transition: all 0.3s;
+		}
+	}
 	&__line {
 		@media (min-width: $mobile) {
 			grid-column: span 2;

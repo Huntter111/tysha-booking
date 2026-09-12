@@ -120,13 +120,14 @@
 	// .menu__list
 	&__list {
 		display: flex;
+		flex-wrap: wrap;
 		flex-grow: 1;
 		@include adaptiveValue('column-gap', 48, 30, 0, $maxWidthContainer, 768);
 		// @include adaptiveValue('padding-right', 140, 0, 0, $maxWidthContainer, 768);
+		row-gap: toRem(16);
 		@media (max-width: $mobile) {
 			flex-direction: column;
 			align-items: center;
-			row-gap: toRem(12);
 		}
 	}
 	// .menu__item
@@ -136,6 +137,13 @@
 	&__link {
 		transition: all 0.3s;
 		@include adaptiveValue('font-size', 18, 14);
+		text-align: center;
+		@media (max-width: $mobile) {
+			font-size: toRem(20);
+		}
+		@media (max-width: $mobileSmall) {
+			font-size: toRem(18);
+		}
 		@media (any-hover: hover) {
 			&:hover {
 				color: #d4a288;

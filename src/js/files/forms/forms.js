@@ -112,6 +112,15 @@ export let formValidate = {
 			} else {
 				this.removeError(formRequiredItem);
 			}
+		} else if (formRequiredItem.name === 'quantity') {
+			// Додана перевірка для поля з іменем 'quantity'
+			if (formRequiredItem.value.trim() !== '6') {
+				// Перевіряємо, чи введене значення не дорівнює 6
+				this.addError(formRequiredItem);
+				error++;
+			} else {
+				this.removeError(formRequiredItem);
+			}
 		} else if (formRequiredItem.type === 'checkbox' && !formRequiredItem.checked) {
 			this.addError(formRequiredItem);
 			error++;
@@ -280,12 +289,15 @@ export function formQuantity() {
 	document.addEventListener('click', function (e) {
 		let targetElement = e.target;
 		if (targetElement.closest('[data-quantity-plus]') || targetElement.closest('[data-quantity-minus]')) {
-			const valueElement = targetElement.closest('[data-quantity]').querySelector('[data-quantity-value]');
+			const quantityElement = targetElement.closest('[data-quantity]');
+			const valueElement = quantityElement.querySelector('[data-quantity-value]');
+			const hasCustomLimit = quantityElement.classList.contains('custom-limit-plus'); // Перевіряємо наявність класу з обмеженням
+
 			let value = parseInt(valueElement.value);
 			if (targetElement.hasAttribute('data-quantity-plus')) {
-				value++;
-				if (+valueElement.dataset.quantityMax && +valueElement.dataset.quantityMax < value) {
-					value = valueElement.dataset.quantityMax;
+				if (!hasCustomLimit || value < 6) {
+					// Додано перевірку, щоб обмеження діяло тільки для елементів з класом 'custom-limit-class'
+					value++;
 				}
 			} else {
 				--value;
@@ -297,10 +309,11 @@ export function formQuantity() {
 					value = 1;
 				}
 			}
-			targetElement.closest('[data-quantity]').querySelector('[data-quantity-value]').value = value;
+			valueElement.value = value;
 		}
 	});
 }
+
 /* Модуль зіркового рейтингу */
 export function formRating() {
 	const ratings = document.querySelectorAll('.rating');

@@ -3,22 +3,19 @@ import { flsModules } from '../files/modules.js';
 class Parallax {
 	constructor(elements) {
 		if (elements.length) {
-			this.elements = Array.from(elements).map((el) => (
-				new Parallax.Each(el, this.options)
-			));
+			this.elements = Array.from(elements).map((el) => new Parallax.Each(el, this.options));
 		}
 	}
 	destroyEvents() {
-		this.elements.forEach(el => {
+		this.elements.forEach((el) => {
 			el.destroyEvents();
-		})
+		});
 	}
 	setEvents() {
-		this.elements.forEach(el => {
+		this.elements.forEach((el) => {
 			el.setEvents();
-		})
+		});
 	}
-
 }
 Parallax.Each = class {
 	constructor(parent) {
@@ -43,12 +40,11 @@ Parallax.Each = class {
 		const positionParent = {
 			top: topToWindow - heightWindow,
 			bottom: topToWindow + heightParent,
-		}
-		const centerPoint = this.parent.dataset.prlxCenter ?
-			this.parent.dataset.prlxCenter : 'center';
+		};
+		const centerPoint = this.parent.dataset.prlxCenter ? this.parent.dataset.prlxCenter : 'center';
 
 		if (positionParent.top < 30 && positionParent.bottom > -30) {
-			// Елемент у початковому положенні (0,0), коли батько знаходиться по відношенню до екрану: 
+			// Елемент у початковому положенні (0,0), коли батько знаходиться по відношенню до екрану:
 			switch (centerPoint) {
 				// верхній точці (початок батька стикається верхнього краю екрану)
 				case 'top':
@@ -56,7 +52,7 @@ Parallax.Each = class {
 					break;
 				// центрі екрана (середина батька у середині екрана)
 				case 'center':
-					this.offset = (heightWindow / 2) - (topToWindow + (heightParent / 2));
+					this.offset = heightWindow / 2 - (topToWindow + heightParent / 2);
 					break;
 				// Початок: нижня частина екрана = верхня частина батька
 				case 'bottom':
@@ -68,24 +64,24 @@ Parallax.Each = class {
 		this.value += (this.offset - this.value) / this.smooth;
 		this.animationID = window.requestAnimationFrame(this.animation);
 
-		this.elements.forEach(el => {
+		this.elements.forEach((el) => {
 			const parameters = {
 				axis: el.dataset.axis ? el.dataset.axis : 'v',
 				direction: el.dataset.direction ? el.dataset.direction + '1' : '-1',
 				coefficient: el.dataset.coefficient ? Number(el.dataset.coefficient) : 5,
 				additionalProperties: el.dataset.properties ? el.dataset.properties : '',
-			}
+			};
 			this.parameters(el, parameters);
-		})
+		});
 	}
 	parameters(el, parameters) {
 		if (parameters.axis == 'v') {
-			el.style.transform = `translate3D(0, ${(parameters.direction * (this.value / parameters.coefficient)).toFixed(2)}px,0) ${parameters.additionalProperties}`
+			el.style.transform = `translate3D(0, ${(parameters.direction * (this.value / parameters.coefficient)).toFixed(2)}px,0) ${parameters.additionalProperties}`;
 		} else if (parameters.axis == 'h') {
-			el.style.transform = `translate3D(${(parameters.direction * (this.value / parameters.coefficient)).toFixed(2)}px,0,0) ${parameters.additionalProperties}`
+			el.style.transform = `translate3D(${(parameters.direction * (this.value / parameters.coefficient)).toFixed(2)}px,0,0) ${parameters.additionalProperties}`;
 		}
 	}
-}
+};
 if (document.querySelectorAll('[data-prlx-parent]')) {
 	flsModules.parallax = new Parallax(document.querySelectorAll('[data-prlx-parent]'));
 }

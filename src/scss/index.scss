@@ -436,6 +436,7 @@
 		@include adaptiveValue('row-gap', 16, 8);
 		@include adaptiveValue('font-size', 18, 14);
 		line-height: 1.5;
+		max-width: toRem(400);
 	}
 
 	&__weekdays {
@@ -446,7 +447,14 @@
 
 	&__additionaly {
 	}
-
+	&__phone {
+		transition: all 0.3s;
+		@media (any-hover: hover) {
+			&:hover {
+				color: #d4a288;
+			}
+		}
+	}
 	&__buttons {
 		display: flex;
 		flex-direction: column;
